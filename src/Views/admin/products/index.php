@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>User</h5>
+                        <h5>Product</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">User</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Product</a> </li>
                     </ul>
                 </div>
             </div>
@@ -32,9 +32,9 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Danh sách User</h5>
+                                    <h5>Danh sách Product</h5>
 
-                                    <a href="/admin/users/create" class="btn btn-info btn-sm">Tạo mới</a>
+                                    <a href="/admin/products/create" class="btn btn-info btn-sm">Tạo mới</a>
                                 </div>
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
@@ -42,27 +42,32 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th>Img</th>
                                                     <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Address</th>
-                                                    <th>Password</th>
+                                                    <th>Price</th>
+                                                    <th>Price sale</th>
+                                                    <th>Active</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                <?php foreach ($users as $user) : ?>
+                                                <?php foreach ($products as $product) : ?>
                                                     <tr>
-                                                        <td><?= $user['id'] ?></td>
-                                                        <td><?= $user['name'] ?></td>
-                                                        <td><?= $user['email'] ?></td>
-                                                        <td><?= $user['address'] ?></td>
-                                                        <td><?= $user['password'] ?></td>
+                                                        <td><?= $product['id'] ?></td>
                                                         <td>
-                                                            <a href="/admin/users/update?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                                                            <img src="<?= $product['img'] ?>" alt="" width="100px">
+                                                        </td>
+                                                        <td><?= $product['name'] ?></td>
+                                                        <td><?= $product['price'] ?></td>
+                                                        <td><?= $product['price_sale'] ?></td>
+                                                        <td><?= $product['is_active'] ? 'Yes' : 'No' ?></td>
+                                                        <td>
+                                                            <a href="/admin/products/update?id=<?= $product['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
-                                                            <form action="/admin/users/delete?id=<?= $user['id'] ?>" method="post">
-                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
+                                                            <form action="/admin/products/delete?id=<?= $product['id'] ?>" method="post">
+                                                                <input type="hidden" name="img" value="<?= $product['img'] ?>">
+                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
                                                             </form>
                                                         </td>
                                                     </tr>
