@@ -14,7 +14,7 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="/addmin/dashboard"><i class="feather icon-home"></i></a>
+                            <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
                         <li class="breadcrumb-item"><a href="#!">User</a> </li>
                     </ul>
@@ -60,5 +60,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
