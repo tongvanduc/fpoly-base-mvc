@@ -11,8 +11,21 @@ class ProductController extends Controller {
     /* Lấy danh sách */
     public function index() {
         $products = (new Product())->all();
+        $categories = (new Category())->all();
 
-        $this->renderAdmin("products/index", ["products" => $products]);
+        // Mảng này có cấu trúc, key là id danh mục, value là tên danh mục
+        // Tạo ra mảng này để hiển thị tên danh mục sản phẩm ở danh sách
+        $arrayCategoryIdName = [];
+        foreach ($categories as $category) {
+            $arrayCategoryIdName[$category['id']] = $category['name'];
+        }
+
+        $this->renderAdmin("products/index", 
+            [
+                "products" => $products, 
+                "arrayCategoryIdName" => $arrayCategoryIdName
+            ]
+        );
     }
 
     /* Thêm mới */
