@@ -62,7 +62,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="auth-sign-in-social.html">
+                                <a href="/logout">
                                     <i class="feather icon-log-out"></i> Logout
                                 </a>
                             </li>

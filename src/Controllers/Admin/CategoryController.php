@@ -7,6 +7,10 @@ use Ductong\BaseMvc\Models\Category;
 
 class CategoryController extends Controller {
 
+    public function __construct() {
+        check_auth();
+    }
+    
     /* Lấy danh sách */
     public function index() {
         $categories = (new Category())->all();

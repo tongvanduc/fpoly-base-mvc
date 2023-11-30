@@ -4,12 +4,18 @@ use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
+use Ductong\BaseMvc\Controllers\Auth\LoginController;
+use Ductong\BaseMvc\Controllers\Auth\LogoutController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
 
 $router->addRoute('/', HomeController::class, 'index');
+
+$router->addRoute('/login', LoginController::class, 'showForm');
+$router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
+$router->addRoute('/logout', LogoutController::class, 'logout');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 

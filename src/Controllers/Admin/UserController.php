@@ -7,6 +7,10 @@ use Ductong\BaseMvc\Models\User;
 
 class UserController extends Controller
 {
+    public function __construct() {
+        check_auth();
+    }
+    
     /*
         Đây là hàm hiển thị danh sách user
     */
