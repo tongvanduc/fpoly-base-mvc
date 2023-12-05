@@ -6,6 +6,7 @@ use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
 use Ductong\BaseMvc\Controllers\Auth\LoginController;
 use Ductong\BaseMvc\Controllers\Auth\LogoutController;
+use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Router;
 
@@ -13,10 +14,20 @@ $router = new Router();
 
 $router->addRoute('/', HomeController::class, 'index');
 
+// Cart.
+$router->addRoute('/cart', CartController::class, 'cart');
+$router->addRoute('/addToCart', CartController::class, 'addToCart');
+$router->addRoute('/removeFromCart', CartController::class, 'removeFromCart');
+$router->addRoute('/incrementQuantity', CartController::class, 'incrementQuantity');
+$router->addRoute('/decrementQuantity', CartController::class, 'decrementQuantity');
+$router->addRoute('/createOrder', CartController::class, 'createOrder');
+
+// Authentication
 $router->addRoute('/login', LoginController::class, 'showForm');
 $router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
 $router->addRoute('/logout', LogoutController::class, 'logout');
 
+// Admin
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
