@@ -8,10 +8,10 @@ const DB_DATABASE = 'wd18341';
 const DB_USERNAME = 'root';
 const DB_PASSWORD = '';
 
-const STATUS_PENDING = 0;
-const STATUS_APPROVED = 1;
-const STATUS_PAY_SUCCESS = 2;
-const STATUS_CANCELED = 3;
+const STATUS_PENDING = 0; //  Chờ duyệt
+const STATUS_APPROVED = 1; // Đã duyệt
+const STATUS_PAY_SUCCESS = 2; // Thanh toán thành công
+const STATUS_CANCELED = 3; // Hủy
 
 if (!function_exists('check_auth')) {
     function check_auth() {

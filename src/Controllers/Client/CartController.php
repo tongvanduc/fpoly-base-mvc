@@ -44,7 +44,7 @@ class CartController extends Controller
     {
         $id = $_GET['id'] ?? '';
 
-        if (!empty($id)) {
+        if (!empty($id) && isset($_SESSION['cart'][$id])) {
             ++$_SESSION['cart'][$id]['quantity'];
         }
 
@@ -55,7 +55,7 @@ class CartController extends Controller
     {
         $id = $_GET['id'] ?? '';
 
-        if (!empty($id)) {
+        if (!empty($id) && isset($_SESSION['cart'][$id])) {
             if ($_SESSION['cart'][$id]['quantity'] > 1) {
                 --$_SESSION['cart'][$id]['quantity'];
             }

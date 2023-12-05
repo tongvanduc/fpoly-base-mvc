@@ -1,6 +1,5 @@
 <div class="container mt-3">
-    <h2>Top 10 sản phẩm</h2>
-    <p>Mua ngay nhé</p>
+    <h2>Giỏ hàng</h2>
 
     <div class="row">
         <div class="col-md-8">
