@@ -27,6 +27,8 @@ class UserController extends Controller
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
+                'is_admin' => $_POST['is_admin'],
+
             ];
 
             (new User)->insert($data);
@@ -44,6 +46,7 @@ class UserController extends Controller
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
+                'is_admin' => $_POST['is_admin'],
             ];
 
             $conditions = [

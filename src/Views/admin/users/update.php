@@ -48,6 +48,12 @@
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control" value="<?= $user['address'] ?>">
 
+                                        <label for="is_admin">Active</label>
+                                        <select name="is_admin" id="is_admin" class="form-control">
+                                            <option <?= $user['is_admin'] ? '' : 'selected' ?>  value="0">No</option>
+                                            <option <?= $user['is_admin'] ? 'selected' : '' ?>  value="1" >Yes</option>
+                                        </select>
+
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>

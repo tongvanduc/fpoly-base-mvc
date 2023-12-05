@@ -70,7 +70,7 @@
                                         <label for="is_active">Active</label>
                                         <select name="is_active" id="is_active" class="form-control">
                                             <option <?= $product['is_active'] ? '' : 'selected' ?>  value="0">No</option>
-                                            <option <?= $product['is_active'] ? 'selected' : '' ?>  value="1" selected>Yes</option>
+                                            <option <?= $product['is_active'] ? 'selected' : '' ?>  value="1">Yes</option>
                                         </select>
 
                                         <label for="description">Description</label>
