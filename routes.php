@@ -28,6 +28,7 @@ $router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
 $router->addRoute('/logout', LogoutController::class, 'logout');
 
 // Admin
+$router->redirect('/admin', '/admin/dashboard');
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
